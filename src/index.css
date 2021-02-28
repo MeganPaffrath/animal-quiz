@@ -18,3 +18,10 @@ section {
   background-color: rgb(157, 211, 211);
   padding: 10px;
 }
+
+.types {
+  background-color: white;
+  margin: 0 10px;
+  border-radius: 10px;
+  padding: 5px;
+}

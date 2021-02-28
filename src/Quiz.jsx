@@ -128,7 +128,8 @@ export default function Quiz({setView, setAnimal}) {
 
   return (
     <div className="items">
-      <h1>What are your traits?</h1>
+      <h1> Are you a 🦁 lion 🦦 otter 🐕 golden retriever or a 🦫 beaver?</h1>
+      <h3>Select your traits:</h3>
       {
         lionTraits.map((i) => {
           return <div key={i}>
