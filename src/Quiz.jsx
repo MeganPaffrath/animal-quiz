@@ -128,37 +128,37 @@ export default function Quiz({setView, setAnimal}) {
 
   return (
     <div className="items">
-      <h1> Are you a 🦁 lion 🦦 otter 🐕 golden retriever or a 🦫 beaver?</h1>
+      <h1> Are you a 🦁 lion, 🦦 otter, 🐕 golden retriever, or a 🦫 beaver?</h1>
       <h3>Select your traits:</h3>
       {
         lionTraits.map((i) => {
-          return <div key={i}>
-            <input type="checkbox" value="lion" onChange={(e) => incrementScore(e)}/>
-            <label>{i}</label>
+          return <div key={i} >
+            <input type="checkbox" value="lion" name={i} id={i} onChange={(e) => incrementScore(e)}/>
+            <label for={i}>{i}</label>
           </div>
         })
       }
       {
         otterTraits.map((i) => {
           return <div key={i}>
-            <input type="checkbox" value="otter" onChange={(e) => incrementScore(e)}/>
-            <label>{i}</label>
+            <input type="checkbox" value="otter" name={i} id={i} onChange={(e) => incrementScore(e)}/>
+            <label for={i}>{i}</label>
           </div>
         })
       }
       {
         goldenTraits.map((i) => {
           return <div key={i}>
-            <input type="checkbox" value="golden retriever" onChange={(e) => incrementScore(e)}/>
-            <label>{i}</label>
+            <input type="checkbox" value="golden retriever" name={i} id={i} onChange={(e) => incrementScore(e)}/>
+            <label for={i}>{i}</label>
           </div>
         })
       }
       {
         beaverTraits.map((i) => {
           return <div key={i}>
-            <input type="checkbox" value="beaver" onChange={(e) => incrementScore(e)}/>
-            <label>{i}</label>
+            <input type="checkbox" value="beaver" name={i} id={i} onChange={(e) => incrementScore(e)}/>
+            <label for={i}>{i}</label>
           </div>
         })
       }
