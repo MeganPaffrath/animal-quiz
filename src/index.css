@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+section {
+  margin: 0 auto;
+  width: 50%;
+  background-color: rgb(157, 211, 211);
+  padding: 10px;
+}

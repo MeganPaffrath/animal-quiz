@@ -23,14 +23,24 @@ export async function newItem (result) {
 }
 
 export async function getItems() {
+  try {
+    return await axios.get(airtableReadAPI);
+  } catch (err) {
+    console.log("error " + err);
+    return err;
+  }
+}
+
+export async function getItems2() {
   let results = new Map();
   try {
-    let response = axios
+    let res = axios
     .get(airtableReadAPI)
     .then(function(result) {
       console.log("results found")
       result.data.records.forEach(function(element, index) {
         if (results.has(element.fields.result)) {
+          // console.log(results);
           console.log("again");
           results.set(
             element.fields.result,
@@ -40,18 +50,11 @@ export async function getItems() {
         } else {
           results.set(element.fields.result, 1);
         }
-
-        return results;
+        
       });
-    })
-
-    if (response) {
-      console.log("good")
+      console.log("returning results")
       return results;
-    } else {
-      console.log("bad")
-      return new Map();
-    }
+    })
   } catch (err) {
     console.log("error " + err);
     return new Map();

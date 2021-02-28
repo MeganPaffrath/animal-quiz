@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {newItem} from "./airtable.js"
 
-export default function Quiz({setView}) {
+export default function Quiz({setView, setAnimal}) {
   let animalScores = [0,0,0,0];
   let animals = ["lion", "otter", "beaver", "golden retriever"];
   let lionTraits = [
@@ -117,8 +117,13 @@ export default function Quiz({setView}) {
     }
 
     console.log("You are an " + animal);
-
-    newItem(animal).then(setView("summary"));
+    setAnimal(animal);
+    newItem(animal).then(function(response) {
+      // give it a little bit for data to hit AirTable
+      setTimeout(function() {
+        setView("summary");
+      }, 750);
+    })
   }
 
   return (
