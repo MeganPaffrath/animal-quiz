@@ -1,1 +1,1 @@
-# animal-quiz
+# Animal Quiz
